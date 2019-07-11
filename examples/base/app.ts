@@ -78,12 +78,13 @@ axios({
   data: arr
 })
 
+// header demo
 axios({
   method: 'post',
   url: '/base/post',
   headers: {
     'content-type': 'application/json',
-    'Accept': 'application/json, text/plain, */*'
+    Accept: 'application/json, text/plain, */*'
   },
   data: {
     a: 1,
@@ -99,3 +100,40 @@ axios({
   url: '/base/post',
   data: searchParams
 })
+
+// response data demo
+axios({
+  method: 'post',
+  url: '/base/post',
+  data: {
+    a: 1,
+    b: 2
+  }
+})
+  .catch(err => {
+    console.log(err)
+  })
+  .then(res => {
+    console.log(res)
+  })
+  .catch(() => '')
+/**
+ * tslint note: no-floating-promises
+ * see the explanation at https://stackoverflow.com/questions/43980188/what-could-this-be-about-tslint-error-promises-must-be-handled-appropriately/#answer-48603963
+ */
+axios({
+  method: 'post',
+  url: '/base/post',
+  responseType: 'json',
+  data: {
+    a: 3,
+    b: 4
+  }
+})
+  .catch(err => {
+    console.log(err)
+  })
+  .then(res => {
+    console.log(res)
+  })
+  .catch(() => '')
