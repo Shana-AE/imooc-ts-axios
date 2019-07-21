@@ -27,11 +27,11 @@ export default class Axios {
   }
 
   put(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise {
-    return this._requestMethodWithData('post', url, data, config)
+    return this._requestMethodWithData('put', url, data, config)
   }
 
   patch(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise {
-    return this._requestMethodWithData('post', url, data, config)
+    return this._requestMethodWithData('patch', url, data, config)
   }
 
   _requestMethodWithoutData(
