@@ -1,5 +1,4 @@
 import { ResolvedFn, RejectedFn } from '../types'
-import { rejects } from 'assert'
 
 interface Interceptor<T> {
   resolved: ResolvedFn<T>
